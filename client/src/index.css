@@ -1,0 +1,188 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 0%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 5%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 9%;
+    --secondary: 0 0% 14.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 14.9%;
+    --muted-foreground: 0 0% 63.9%;
+    --accent: 0 0% 14.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 14.9%;
+    --input: 0 0% 14.9%;
+    --ring: 0 0% 83.1%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+    --radius: 0.75rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-black text-white;
+    background-color: #050508 !important;
+    font-family: 'Inter', sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+/* Scrollbar */
+* { scrollbar-width: thin; scrollbar-color: #333 #0a0a0a; }
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #0a0a0a; }
+::-webkit-scrollbar-thumb { background: #2a2a2a; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #444; }
+html, body { overflow-y: auto; height: 100%; }
+
+/* ── Glass Morphism Utilities ────────────────────────────────── */
+.glass {
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-strong {
+  background: rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(32px);
+  -webkit-backdrop-filter: blur(32px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.glass-hover {
+  transition: all 0.3s ease;
+}
+.glass-hover:hover {
+  background: rgba(255, 255, 255, 0.07);
+  border-color: rgba(255, 255, 255, 0.14);
+  transform: translateY(-1px);
+}
+
+.glass-input {
+  background: rgba(255, 255, 255, 0.05) !important;
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  color: white !important;
+  transition: border-color 0.2s, background 0.2s;
+}
+.glass-input:focus {
+  background: rgba(255, 255, 255, 0.08) !important;
+  border-color: rgba(255, 255, 255, 0.25) !important;
+  outline: none;
+}
+.glass-input::placeholder { color: rgba(255,255,255,0.25) !important; }
+
+.glass-btn {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: white;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  backface-visibility: hidden;
+  transform: translate3d(0, 0, 0);
+}
+.glass-btn:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.22);
+  transform: translateY(-1.5px) translate3d(0, 0, 0);
+  box-shadow: 0 8px 24px rgba(255, 255, 255, 0.08);
+}
+.glass-btn:active {
+  transform: scale(0.95) translateY(0) translate3d(0, 0, 0) !important;
+  background: rgba(255, 255, 255, 0.18) !important;
+  box-shadow: 0 2px 8px rgba(255, 255, 255, 0.04);
+}
+
+.glass-btn-primary {
+  background: linear-gradient(135deg, rgba(124, 58, 237, 0.35), rgba(99, 102, 241, 0.35));
+  border: 1px solid rgba(124, 58, 237, 0.5);
+  color: white;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  backface-visibility: hidden;
+  transform: translate3d(0, 0, 0);
+}
+.glass-btn-primary:hover {
+  background: linear-gradient(135deg, rgba(124, 58, 237, 0.5), rgba(99, 102, 241, 0.5));
+  border-color: rgba(124, 58, 237, 0.7);
+  transform: translateY(-1.5px) translate3d(0, 0, 0);
+  box-shadow: 0 8px 32px rgba(124, 58, 237, 0.32);
+}
+.glass-btn-primary:active {
+  transform: scale(0.95) translateY(0) translate3d(0, 0, 0) !important;
+  background: linear-gradient(135deg, rgba(124, 58, 237, 0.6), rgba(99, 102, 241, 0.6)) !important;
+  box-shadow: 0 2px 8px rgba(124, 58, 237, 0.18);
+}
+
+/* Global button click tactile animation */
+button,
+[role="button"] {
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+button:active,
+[role="button"]:active {
+  transform: scale(0.95) !important;
+}
+
+/* ── Glow Effects ────────────────────────────────────────────── */
+.glow-white { box-shadow: 0 0 40px rgba(255,255,255,0.06); }
+.glow-white-sm { box-shadow: 0 0 20px rgba(255,255,255,0.04); }
+
+/* ── Background Grid ─────────────────────────────────────────── */
+.bg-grid {
+  background-image:
+    linear-gradient(to right, rgba(255,255,255,0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+/* ── Text Outline ────────────────────────────────────────────── */
+.text-outline {
+  color: transparent !important;
+  -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.9);
+}
+.text-outline-dim {
+  color: transparent !important;
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.2);
+}
+
+/* ── Mono-tech font ──────────────────────────────────────────── */
+.font-mono-tech {
+  font-family: ui-monospace, 'SF Mono', Menlo, Monaco, Consolas, 'Courier New', monospace !important;
+  letter-spacing: 0.1em !important;
+  text-transform: uppercase;
+}
+
+/* ── Ambient orbs ────────────────────────────────────────────── */
+.ambient-orb {
+  position: fixed;
+  border-radius: 50%;
+  filter: blur(80px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Select dropdown dark styling */
+select option {
+  background: #111;
+  color: white;
+}
