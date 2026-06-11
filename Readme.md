@@ -33,11 +33,9 @@
 
 ## 🎬 Demo
 
-> **Live Demo:** _Coming soon / Add Netlify link here_
-
-| Dashboard | Interview Room | Resume Analyzer |
-|-----------|---------------|-----------------|
-| _(screenshot)_ | _(screenshot)_ | _(screenshot)_ |
+| Dashboard | Resume Analyzer | Interview Room |
+|-----------|-----------------|----------------|
+| ![Dashboard](./assets/dashboard.jpg) | ![Resume Analyzer](./assets/resume_analyzer.jpg) | ![Interview Room](./assets/interview_room.png) |
 
 > 📸 **Tip for recruiters:** Clone + run with `npm run dev` in both `/client` and `/server`, or check the [Getting Started](#-getting-started) section below.
 

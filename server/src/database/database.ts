@@ -15,7 +15,10 @@ export const connectDB = async () => {
     }
 
     try {
-        const db = await mongoose.connect(MONGO_URI, {});
+        const db = await mongoose.connect(MONGO_URI, {
+            tls: true,
+            tlsAllowInvalidCertificates: true,
+        });
         isConnected = db.connections[0].readyState === 1;
         console.log("MongoDB connected successfully");
 
